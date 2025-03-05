@@ -15,7 +15,7 @@ sh 'javac HelloWorld.java'
 stage('Test'){
 steps{
 echo 'Running tests...'
-sh 'java Welcome'
+sh 'java HelloWorld'
 }
 }
 stage('Deploy'){

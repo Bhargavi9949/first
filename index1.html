@@ -1,0 +1,82 @@
+<html>
+<head>
+    <img src="/home/vbit/vbit-logo1-qbgvbcbsz9swglma2e45ppzvvc8xayi3q6zgohdfh2.png" alt="Logo">
+    <title>Registration Form</title>
+</head>
+<style>
+    body{
+        background-color:rgb(245, 141, 175);
+    }
+    .container{
+        width: 300px;
+        height: 200px;
+        background-color: white;
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+    container h1{
+        text-align: center;
+        }
+</style>
+<body>
+    <h1>Registration Form</h1>
+    <form onsubmit="validateForm(event)">
+        First Name: <input type="text" id="firstname" name="firstname"><br></br>
+        Last Name: <input type="text" id="lastname" name="lastname"><br></br>
+        Mobile No: <input type="text" id="mobileNo" name="mobileNo"><br></br>
+        Email: <input type="text" id="email" name="email"><br></br>
+        Password: <input type="password" id="password" name="password"><br></br>
+        Address: <textarea id="address" name="address"></textarea><br></br>
+        City: <input type="text" id="city" name="city"><br></br>
+        State: <input type="text" id="state" name="state"><br></br>
+        Country: <input type="text" id="country" name="country"><br></br>
+        Course:
+        <input type="radio" id="CSE" name="course" value="CSE"> CSE
+        <input type="radio" id="CSD" name="course" value="CSD"> CSD
+        <input type="radio" id="CSM" name="course" value="CSM"> CSM
+        <input type="radio" id="CSB" name="course" value="CSB"> CSB<br></br>
+        <button type="submit">Register</button>
+    </form>
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            const firstname = document.getElementById("firstname").value;
+            if (firstname === "") {
+                alert("Please enter your first name");
+                return false;
+            }
+
+            const lastname = document.getElementById("lastname").value;
+            if (lastname === "") {
+                alert("Please enter your last name");
+                return false;
+            }
+
+            const mobileno = document.getElementById("mobileNo").value;
+            if (mobileno.length !== 10) {
+                alert("Mobile number should be 10 digits");
+                return false;
+            }
+
+            const email = document.getElementById("email").value;
+            if (email.indexOf("@") < 0) {
+                alert("Please enter a valid email");
+                return false;
+            }
+
+            const password = document.getElementById("password").value;
+            if (password.length < 8) {
+                alert("Password should be at least 8 characters long");
+                return false;
+            }
+
+            const address = document.getElementById("address").value;
+            if (address === "") {
+                alert("Please enter your address");
+                return false;
+            }
+            alert("Registration successful!");
+        }
+    </script>
+    </html>

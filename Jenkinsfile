@@ -9,7 +9,7 @@ git 'https://github.com/Bhargavi9949/first.git'
 stage('Build){
 steps{
 echo 'Building the project...'
-sh 'javac Welcome.java'
+sh 'javac HelloWorld.java'
 }
 }
 stage('Test'){
